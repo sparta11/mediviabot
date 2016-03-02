@@ -23,14 +23,6 @@ namespace MediviaBot.input
             this.KeyUp(VK_CONTROL);
         }
 
-        //public void AttackEvent(Point point)
-        //{
-        //    this.KeyDown(VK_MENU, true, false, 0);
-        //    this.MouseMove(point, false, false, false, false);
-        //    this.LeftButtonDown(point, false, false);
-        //    this.KeyUp(VK_MENU, true, false);
-        //}
-
         internal void LeftClickPressingKeyEvent(Point point, bool ctrl, bool shift, bool alt)
         {
 

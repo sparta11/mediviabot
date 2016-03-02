@@ -24,9 +24,6 @@ namespace MediviaBot.memory.player
 
         private uint getPlayerStartAddres()
         {
-            //Console.WriteLine("player start addres: " + Convert.ToUInt32(address.GetPlayerStartAddress()).ToString("X"));
-            //Console.WriteLine("Base Addres: " + Convert.ToUInt32(GetBaseAddress()).ToString("X"));
-            //Console.WriteLine("Player start addres: " + Convert.ToUInt32(ReadUInt32(GetBaseAddress() + address.GetPlayerStartAddress()).ToString("X")));
             return ReadUInt32(GetBaseAddress() + address.GetPlayerStartAddress());
         }
 
@@ -109,7 +106,6 @@ namespace MediviaBot.memory.player
             switch (inventory)
             {
                 case InventoryLocation.Head:
-                    Console.WriteLine("------------- Reading head --------------------");
                     itemAdr = ReadUInt32(getPlayerStartAddres() + address.GetInventoryHelmetAddress());
                     return readItem(itemAdr);
                 case InventoryLocation.Neck:

@@ -60,7 +60,6 @@ namespace MediviaBot.player
                     setExaustedTime(HEALING_EXAUSTED_MS);                
             }
 
-            Console.WriteLine("============================== Casting: " + spell.Words);
             string hotkey = client.GetClientHotkey(spell.Words);
             if (hotkey.Equals("not found"))
             {
