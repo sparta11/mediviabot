@@ -1,0 +1,84 @@
+﻿using MediviaBot.game.model;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MediviaBot.game.repository
+{
+    class Spells
+    {
+        public static Spell Light = new Spell("Light", "utevo lux", 20, false, SpellCategory.Support, SpellType.Instant);
+        public static Spell FindPerson = new Spell("Find Person", "exiva \"{name}\"", 20, false, SpellCategory.Support, SpellType.Instant);
+        public static Spell Food = new Spell("Food", "exevo pan", 30, false, SpellCategory.Supply, SpellType.Instant);
+        public static Spell MagicRope = new Spell("Magic Rope", "exani tera", 20, false, SpellCategory.Support, SpellType.Instant);
+        public static Spell LightHealing = new Spell("Light Healing", "exura", 25, false, SpellCategory.Healing, SpellType.Instant);
+        public static Spell Antidote = new Spell("Antidote", "exana pox", 30, false, SpellCategory.Healing, SpellType.Instant);
+        public static Spell Levitate = new Spell("Levitate", "exani hur \"{up|down}\"", 50, false, SpellCategory.Support, SpellType.Instant);
+        public static Spell LightMagicMissile = new Spell("Light Magic Missile", "adori min vis", 35, true, SpellCategory.Attack, SpellType.ItemTransformation);
+        public static Spell LastResort = new Spell("Last Resort", "exevo vis", 400, false, SpellCategory.Support, SpellType.Instant);
+        public static Spell DeathStrike = new Spell("Force Strike", "exori mort", 20, false, SpellCategory.Attack, SpellType.Instant);
+        public static Spell ConjureArrow = new Spell("Conjure Arrow", "exevo con", 40, false, SpellCategory.Supply, SpellType.Instant);
+        public static Spell PoisonField = new Spell("Poison Field", "adevo grav pox", 40, true, SpellCategory.Attack, SpellType.ItemTransformation);
+        public static Spell IntenseHealing = new Spell("Intense Healing", "exura gran", 40, false, SpellCategory.Healing, SpellType.Instant);
+        public static Spell EnergyStrike = new Spell("Energy Strike", "exori vis", 20, false, SpellCategory.Attack, SpellType.Instant);
+        public static Spell GreatLight = new Spell("Great Light", "utevo gran lux", 60, false, SpellCategory.Support, SpellType.Instant);
+        public static Spell FlameStrike = new Spell("Flame Strike", "exori flam", 20, false, SpellCategory.Attack, SpellType.Instant);
+        public static Spell HeavyMagicMissile = new Spell("Heavy Magic Missile", "adori gran", 70, true, SpellCategory.Attack, SpellType.ItemTransformation);
+        public static Spell FireHealing = new Spell("Fire Healing", "exana flam", 20, false, SpellCategory.Healing, SpellType.Instant);
+        public static Spell EnergyHealing = new Spell("Energy Healing", "exana vis", 30, false, SpellCategory.Healing, SpellType.Instant);
+        public static Spell FireField = new Spell("Fire Field", "adevo grav flam", 60, true, SpellCategory.Attack, SpellType.ItemTransformation);
+        public static Spell MagicShield = new Spell("Magic Shield", "utamo vita", 50, false, SpellCategory.Support, SpellType.Instant);
+        public static Spell Haste = new Spell("Haste", "utani hur", 60, false, SpellCategory.Support, SpellType.Instant);
+        public static Spell IntenseHealingRune = new Spell("Intense Healing Rune", "adura gran", 60, true, SpellCategory.Healing, SpellType.ItemTransformation);
+        public static Spell Challenge = new Spell("Challenge", "exeta res", 30, false, SpellCategory.Support, SpellType.Instant);
+        public static Spell ConjureHuntingArrow = new Spell("Conjure Hunting Arrow", "exevo con hur", 80, false, SpellCategory.Supply, SpellType.Instant);
+        public static Spell Berserk = new Spell("Berserk", "exori", 0, false, SpellCategory.Attack, SpellType.Instant);
+        public static Spell AntidoteRune = new Spell("Antidote Rune", "adana pox", 50, true, SpellCategory.Healing, SpellType.ItemTransformation);
+        public static Spell ConjurePoisonedArrow = new Spell("Conjure Poisoned Arrow", "exevo con pox", 70, false, SpellCategory.Supply, SpellType.Instant);
+        public static Spell Fireball = new Spell("Fireball", "adori flam", 60, true, SpellCategory.Attack, SpellType.ItemTransformation);
+        public static Spell EnergyField = new Spell("Energy Field", "adevo grav vis", 60, true, SpellCategory.Attack, SpellType.ItemTransformation);
+        public static Spell DestroyField = new Spell("Destroy Field", "adito grav", 60, true, SpellCategory.Support, SpellType.ItemTransformation);
+        public static Spell ConjureBolt = new Spell("Conjure Bolt", "exevo con mort", 70, false, SpellCategory.Supply, SpellType.Instant);
+        public static Spell FireWave = new Spell("Fire Wave", "exevo flam hur", 80, false, SpellCategory.Attack, SpellType.Instant);
+        public static Spell HealFriend = new Spell("Heal Friend", "exura sio \"{name}\"", 70, false, SpellCategory.Healing, SpellType.Instant);
+        public static Spell AnimateDead = new Spell("Animate Dead", "adana mort", 300, false, SpellCategory.Summon, SpellType.ItemTransformation);
+        public static Spell UltimateHealing = new Spell("Ultimate Healing", "exura vita", 80, false, SpellCategory.Healing, SpellType.Instant);
+        public static Spell Desintegrate = new Spell("Desintegrate", "adito tera", 200, true, SpellCategory.Support, SpellType.ItemTransformation);
+        public static Spell StrongHaste = new Spell("Strong Haste", "utani gran hur", 100, false, SpellCategory.Support, SpellType.Instant);
+        public static Spell PoisonBomb = new Spell("Poison Bomb", "adevo mas pox", 130, true, SpellCategory.Attack, SpellType.ItemTransformation);
+        public static Spell ConjureHuntingBolt = new Spell("Conjure Hunting Bolt", "exevo con hur mort", 110, false, SpellCategory.Supply, SpellType.Instant);
+        public static Spell FireBomb = new Spell("Fire Bomb", "adevo mas flam", 135, true, SpellCategory.Attack, SpellType.ItemTransformation);
+        public static Spell GreatFireball = new Spell("Great Fireball", "adori gran flam", 135, true, SpellCategory.Attack, SpellType.ItemTransformation);
+        public static Spell MassEnergyHealing = new Spell("Mass Energy Healing", "exana vis mas res", 50, false, SpellCategory.Healing, SpellType.Instant);
+        public static Spell MassFireHealing = new Spell("Mass Fire Healing", "exana flam mas res", 65, false, SpellCategory.Healing, SpellType.Instant);
+        public static Spell ConvinceCreature = new Spell("Convince Creature", "adeta sio", 100, true, SpellCategory.Summon, SpellType.ItemTransformation);
+        public static Spell CreatureIllusion = new Spell("Creature Illusion", "utevo res ina \"{creatureName}\"", 100, false, SpellCategory.Support, SpellType.Instant);
+        public static Spell EnergyBeam = new Spell("Energy Beam", "exevo vis lux", 100, false, SpellCategory.Attack, SpellType.Instant);
+        public static Spell ConjureExplosiveArrow = new Spell("Conjure Explosive Arrow", "exevo con flam", 120, false, SpellCategory.Supply, SpellType.Instant);
+        public static Spell UltimateHealingRune = new Spell("Ultimate Healing Rune", "adura vita", 100, true, SpellCategory.Healing, SpellType.ItemTransformation);
+        public static Spell Chameleon = new Spell("Chameleon", "adevo ina", 150, true, SpellCategory.Support, SpellType.ItemTransformation);
+        public static Spell PoisonWall = new Spell("Poison Wall", "adevo mas grav pox", 160, true, SpellCategory.Attack, SpellType.ItemTransformation);
+        public static Spell UltimateLight = new Spell("Ultimate Light", "utevo vis lux", 140, false, SpellCategory.Support, SpellType.Instant);
+        public static Spell Explosion = new Spell("Explosion", "adevo mas hur", 180, true, SpellCategory.Attack, SpellType.ItemTransformation);
+        public static Spell CancelInvisibility = new Spell("Cancel Invisibility", "exana ina", 150, false, SpellCategory.Support, SpellType.Instant);
+        public static Spell Soulfire = new Spell("Soulfire", "adevo res flam", 150, true, SpellCategory.Attack, SpellType.ItemTransformation);
+        public static Spell WildGrowth = new Spell("Wild Growth", "exevo grav vita", 220, true, SpellCategory.Support, SpellType.Instant);
+        public static Spell MagicWall = new Spell("Magic Wall", "adevo grav tera", 250, true, SpellCategory.Support, SpellType.ItemTransformation);
+        public static Spell ConjurePowerBolt = new Spell("Conjure Power Bolt", "exevo con vis", 200, false, SpellCategory.Supply, SpellType.Instant);
+        public static Spell Invisible = new Spell("Invisible", "utana vid", 210, false, SpellCategory.Support, SpellType.Instant);
+        public static Spell MassHealing = new Spell("Mass Healing", "exura gran mas res", 150, false, SpellCategory.Healing, SpellType.Instant);
+        public static Spell SummonCreature = new Spell("Summon Creature", "utevo res \"{creatureName}\"", 0, false, SpellCategory.Summon, SpellType.Instant);
+        public static Spell EnergyBomb = new Spell("Energy Bomb", "adevo mas vis", 220, true, SpellCategory.Attack, SpellType.ItemTransformation);
+        public static Spell EnergyWall = new Spell("Energy Wall", "adevo mas grav vis", 250, true, SpellCategory.Attack, SpellType.ItemTransformation);
+        public static Spell EnergyWave = new Spell("Energy Wave", "exevo mort hur", 250, false, SpellCategory.Attack, SpellType.Instant);
+        public static Spell EnchantStaff = new Spell("Enchant Staff", "exeta vis", 80, false, SpellCategory.Supply, SpellType.Instant);
+        public static Spell SuddenDeath = new Spell("Sudden Death", "adori gran mort", 220, true, SpellCategory.Attack, SpellType.ItemTransformation);
+        public static Spell PoisonStorm = new Spell("Poison Storm", "exevo gran mas pox", 600, false, SpellCategory.Attack, SpellType.Instant);
+        public static Spell UndeadLegion = new Spell("Undead Legion", "exana mas mort", 500, false, SpellCategory.Summon, SpellType.Instant);
+        public static Spell FireWall = new Spell("Fire Wall", "adevo mas grav flam", 200, true, SpellCategory.Attack, SpellType.ItemTransformation);
+        public static Spell Paralyze = new Spell("Paralyze", "adana ani", 900, true, SpellCategory.Support, SpellType.ItemTransformation);
+        public static Spell UltimateExplosion = new Spell("Ultimate Explosion", "exevo gran mas vis", 800, false, SpellCategory.Attack, SpellType.Instant);
+    }
+}

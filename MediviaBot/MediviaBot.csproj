@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0AD4C4C7-1F07-4F4C-8758-33094502FEDE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MediviaBot</RootNamespace>
+    <AssemblyName>MediviaBot</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>enlightened_hexagon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="addresses\ContainerAddress.cs" />
+    <Compile Include="addresses\CreatureAddress.cs" />
+    <Compile Include="addresses\GameAddress.cs" />
+    <Compile Include="addresses\GuiAddress.cs" />
+    <Compile Include="addresses\PlayerAddress.cs" />
+    <Compile Include="addresses\repository\ContainerAddressRepository.cs" />
+    <Compile Include="addresses\repository\CreatureAddressRepository.cs" />
+    <Compile Include="addresses\repository\GameAddressRepository.cs" />
+    <Compile Include="addresses\repository\GuiAddressRepository.cs" />
+    <Compile Include="addresses\repository\PlayerAddressRepository.cs" />
+    <Compile Include="bot\Bot.cs" />
+    <Compile Include="bot\BotImpl.cs" />
+    <Compile Include="bot\ClientChooser.cs" />
+    <Compile Include="bot\ClientOption.cs" />
+    <Compile Include="bot\core\keyboardsimulator\KeyboardSimulator.cs" />
+    <Compile Include="bot\core\keyboardsimulator\KeyboardSimulatorImpl.cs" />
+    <Compile Include="bot\core\mousesimulator\MouseMover.cs" />
+    <Compile Include="bot\core\mousesimulator\MouseSimulator.cs" />
+    <Compile Include="bot\core\mousesimulator\MouseSimulatorImpl.cs" />
+    <Compile Include="bot\core\mousesimulator\MouseUser.cs" />
+    <Compile Include="bot\core\mousesimulator\mover\FromContainer.cs" />
+    <Compile Include="bot\core\mousesimulator\mover\FromGround.cs" />
+    <Compile Include="bot\core\mousesimulator\mover\FromInventory.cs" />
+    <Compile Include="bot\Module.cs" />
+    <Compile Include="bot\modules\antidle\AntidleModule.cs" />
+    <Compile Include="bot\modules\eatfood\EatFoodModule.cs" />
+    <Compile Include="bot\modules\hotkeys\HotkeySettings.cs" />
+    <Compile Include="bot\modules\hotkeys\HotkeysModule.cs" />
+    <Compile Include="bot\modules\hotkeys\LowLevelKeyboardListener.cs" />
+    <Compile Include="bot\modules\lighthack\LightHackModule.cs" />
+    <Compile Include="bot\modules\runemaker\RuneMakerModule.cs" />
+    <Compile Include="bot\modules\runemaker\RuneMakerSettings.cs" />
+    <Compile Include="bot\PreLoader.cs" />
+    <Compile Include="client\Client.cs" />
+    <Compile Include="client\ClientImpl.cs" />
+    <Compile Include="client\gui\ClientGui.cs" />
+    <Compile Include="client\gui\ClientGuiHelper.cs" />
+    <Compile Include="client\gui\ClientGuiImpl.cs" />
+    <Compile Include="client\gui\ContainerManager.cs" />
+    <Compile Include="client\gui\GameMapManager.cs" />
+    <Compile Include="client\UIWidget.cs" />
+    <Compile Include="forms\ClientChooserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\ClientChooserForm.designer.cs">
+      <DependentUpon>ClientChooserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\HotkeysForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\HotkeysForm.designer.cs">
+      <DependentUpon>HotkeysForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\MainForm.designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\RuneMakerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\RuneMakerForm.designer.cs">
+      <DependentUpon>RuneMakerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="game\Game.cs" />
+    <Compile Include="game\GameEvents.cs" />
+    <Compile Include="game\GameEventsImpl.cs" />
+    <Compile Include="game\GameImpl.cs" />
+    <Compile Include="game\GameVariables.cs" />
+    <Compile Include="game\GameVariablesImpl.cs" />
+    <Compile Include="game\model\Container.cs" />
+    <Compile Include="game\model\Creature.cs" />
+    <Compile Include="game\model\Food.cs" />
+    <Compile Include="game\model\Item.cs" />
+    <Compile Include="game\model\Rune.cs" />
+    <Compile Include="game\model\Spell.cs" />
+    <Compile Include="game\model\Thing.cs" />
+    <Compile Include="game\repository\AmmunitionList.cs" />
+    <Compile Include="game\repository\ContainerList.cs" />
+    <Compile Include="game\repository\FoodList.cs" />
+    <Compile Include="game\repository\ItemList.cs" />
+    <Compile Include="game\repository\MonsterList.cs" />
+    <Compile Include="game\repository\RuneList.cs" />
+    <Compile Include="game\repository\SpellList.cs" />
+    <Compile Include="game\repository\Spells.cs" />
+    <Compile Include="game\repository\ValuableList.cs" />
+    <Compile Include="input\InputParameterHelper.cs" />
+    <Compile Include="input\InputSender.cs" />
+    <Compile Include="input\InputSenderImpl.cs" />
+    <Compile Include="input\InputSimulator.cs" />
+    <Compile Include="input\KeyboardImpl.cs" />
+    <Compile Include="input\model\Input.cs" />
+    <Compile Include="input\model\InputSimulator.cs" />
+    <Compile Include="input\model\InputType.cs" />
+    <Compile Include="input\model\KeyboardHotkeyPress.cs" />
+    <Compile Include="input\model\KeyboardKeyPress.cs" />
+    <Compile Include="input\model\MouseDrag.cs" />
+    <Compile Include="input\model\MouseDragPressingKey.cs" />
+    <Compile Include="input\model\MouseLeftClick.cs" />
+    <Compile Include="input\model\MouseRightClick.cs" />
+    <Compile Include="input\model\MouseScrollDown.cs" />
+    <Compile Include="input\model\MouseScrollUp.cs" />
+    <Compile Include="input\model\MouseUse.cs" />
+    <Compile Include="input\model\MouseUseOn.cs" />
+    <Compile Include="input\model\MouseUseWithCrosshairs.cs" />
+    <Compile Include="input\MouseAndKeyboard.cs" />
+    <Compile Include="input\MouseImpl.cs" />
+    <Compile Include="memory\container\ContainerMemoryReader.cs" />
+    <Compile Include="memory\container\ContainerReader.cs" />
+    <Compile Include="memory\container\ContainerReaderHelper.cs" />
+    <Compile Include="memory\creature\CreatureMemoryReader.cs" />
+    <Compile Include="memory\creature\CreatureReader.cs" />
+    <Compile Include="memory\game\GameMemoryReader.cs" />
+    <Compile Include="memory\game\GameReader.cs" />
+    <Compile Include="memory\gui\GuiContainerReader.cs" />
+    <Compile Include="memory\gui\GuiMemoryReader.cs" />
+    <Compile Include="memory\gui\GuiReader.cs" />
+    <Compile Include="memory\gui\HotkeyReader.cs" />
+    <Compile Include="memory\gui\InventoryReader.cs" />
+    <Compile Include="memory\gui\StatusMessageReader.cs" />
+    <Compile Include="memory\item\ItemMemoryReader.cs" />
+    <Compile Include="memory\item\ItemReader.cs" />
+    <Compile Include="memory\lighthack\LightHackMemory.cs" />
+    <Compile Include="memory\MemoryManager.cs" />
+    <Compile Include="memory\MemoryManagerHelper.cs" />
+    <Compile Include="memory\player\PlayerMemoryReader.cs" />
+    <Compile Include="memory\player\PlayerReader.cs" />
+    <Compile Include="memory\StructureHelper.cs" />
+    <Compile Include="memory\WindowsAPI.cs" />
+    <Compile Include="player\Player.cs" />
+    <Compile Include="player\PlayerEvents.cs" />
+    <Compile Include="player\PlayerEventsImpl.cs" />
+    <Compile Include="player\PlayerVariables.cs" />
+    <Compile Include="player\PlayerVariablesImpl.cs" />
+    <Compile Include="player\SpellCaster.cs" />
+    <Compile Include="player\PlayerImpl.cs" />
+    <Compile Include="player\timer\StandTime.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="util\BotUtil.cs" />
+    <Compile Include="util\ClientHotkey.cs" />
+    <Compile Include="util\Deque.cs" />
+    <Compile Include="util\Direction.cs" />
+    <Compile Include="util\Hotkey.cs" />
+    <Compile Include="util\HotkeyType.cs" />
+    <Compile Include="util\InputDeque.cs" />
+    <Compile Include="util\item\ItemLocation.cs" />
+    <Compile Include="util\item\ItemLocationContainer.cs" />
+    <Compile Include="util\item\ItemLocationGround.cs" />
+    <Compile Include="util\item\ItemLocationInventory.cs" />
+    <Compile Include="util\Location.cs" />
+    <Compile Include="util\PlayerConditions.cs" />
+    <Compile Include="util\Rect.cs" />
+    <EmbeddedResource Include="forms\ClientChooserForm.resx">
+      <DependentUpon>ClientChooserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\HotkeysForm.resx">
+      <DependentUpon>HotkeysForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\RuneMakerForm.resx">
+      <DependentUpon>RuneMakerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="game\timer\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="enlightened_hexagon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
