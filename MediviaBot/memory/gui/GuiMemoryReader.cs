@@ -16,6 +16,10 @@ namespace memory.gui
 
         protected GuiAddress addresses = GuiAddressRepository.Instance;
         private StructureHelper structHelper = new StructureHelper();
+        private HotkeyReader hotkeyReader = new HotkeyReader();
+        private InventoryReader inventoryReader = new InventoryReader();
+        private GuiContainerReader guiContainerReader = new GuiContainerReader();
+        private StatusMessageReader statusMessageReader = new StatusMessageReader();
 
         protected uint rootAdr = 0;
         //game panels
@@ -54,17 +58,22 @@ namespace memory.gui
 
         public List<ClientHotkey> GetHotkeys()
         {
-            return new HotkeyReader().getAllHotkeys();
+            return hotkeyReader.getAllHotkeys();
         }
 
         public List<UIWidget> GetInventorySlotsUIWidgets()
         {
-            return new InventoryReader().FindAllInventorySlotsUIWidgets();
+            return inventoryReader.FindAllInventorySlotsUIWidgets();
         }
 
         public List<UIWidget> GetContainerUIWidgets()
         {
-            return new GuiContainerReader().GetAllContainers();
+            return guiContainerReader.GetAllContainers();
+        }
+
+        public string GetStatusMessage()
+        {
+            return statusMessageReader.readMessage();
         }
 
         protected UIWidget ReadUIWidget(uint widgetAddress)
@@ -123,10 +132,6 @@ namespace memory.gui
             return this.structHelper.iterateDeque(parent, dequeStart, dequeSize, firstIndex);
         }
 
-        public string GetStatusMessage()
-        {
-            return new StatusMessageReader().readMessage();
-        }
     }
 }
 
