@@ -15,11 +15,11 @@ namespace memory.gui
     {
 
         protected GuiAddress addresses = GuiAddressRepository.Instance;
-        private StructureHelper structHelper = new StructureHelper();
-        private HotkeyReader hotkeyReader = new HotkeyReader();
-        private InventoryReader inventoryReader = new InventoryReader();
-        private GuiContainerReader guiContainerReader = new GuiContainerReader();
-        private StatusMessageReader statusMessageReader = new StatusMessageReader();
+        private static StructureHelper structHelper = new StructureHelper();
+        private static HotkeyReader hotkeyReader = new HotkeyReader();
+        private static InventoryReader inventoryReader = new InventoryReader();
+        private static GuiContainerReader guiContainerReader = new GuiContainerReader();
+        private static StatusMessageReader statusMessageReader = new StatusMessageReader();
 
         protected uint rootAdr = 0;
         //game panels
@@ -129,7 +129,7 @@ namespace memory.gui
             uint dequeStart = ReadUInt32(parent + addresses.GetUIWidgetChildrensAdrress());
             int dequeSize = ReadInt32(parent + addresses.GetUIWidgetChildrensSizeAdrress());
             int firstIndex = ReadInt32(parent + +addresses.GetUiWidgetChildrenFirstIndexAddress());
-            return this.structHelper.iterateDeque(parent, dequeStart, dequeSize, firstIndex);
+            return structHelper.iterateDeque(parent, dequeStart, dequeSize, firstIndex);
         }
 
     }

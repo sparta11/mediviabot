@@ -16,12 +16,12 @@ namespace MediviaBot
         [STAThread]
         static void Main()
         {
-            PreLoader loader = new PreLoader();
-            loader.Initialize(null);
+            //PreLoader loader = new PreLoader();
+            //loader.Initialize(null);
 
-            //Application.EnableVisualStyles();
-            //Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new ClientChooserForm());
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new ClientChooserForm());
         }
     }
 }

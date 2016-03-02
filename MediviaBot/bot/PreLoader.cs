@@ -21,12 +21,14 @@ namespace MediviaBot.bot
             //Console.WriteLine("|-- PreLoader: Setting process...");
             //Process[] mediviaProcess = Process.GetProcessesByName("Medivia_OGL");
             //process = mediviaProcess[0];
+            if (process == null)
+                Console.WriteLine("null");
             ClientImpl.Process = process;
 
             InputSender inputSender = InputSenderImpl.Instance;
             Console.WriteLine("|-- QueueManager: Creating queue manager thread ... ");
-            Client client = ClientImpl.Instance;
             Console.WriteLine("|-- PreLoader: Setting process... [done]");
+            Client client = ClientImpl.Instance;
             Game game = GameImpl.Instance;
             Bot bot = BotImpl.Instance;
             Player player = PlayerImpl.Instance;
