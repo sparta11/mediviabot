@@ -27,6 +27,7 @@ namespace MediviaBot.game.model
         public int YPos { get; set; }
         public int ZPos { get; set; }
         public int HpPc { get; set; }
+        public int Speed { get; set; }
         public Location Location
         {
             get
@@ -35,9 +36,17 @@ namespace MediviaBot.game.model
             }
         }
 
+        public bool IsNpc()
+        {
+            if (this.Speed == 110)
+                return true;
+
+            return false;
+        }
+
         public bool IsSelf()
         {
-            return PlayerImpl.Instance.Name().Equals(this.Name);
+            return PlayerImpl.Instance.Id() == this.Id;
         }
 
         public bool IsMonster()
@@ -47,7 +56,7 @@ namespace MediviaBot.game.model
 
         public bool IsPlayer()
         {
-            if (!IsMonster() && !IsSelf())
+            if (!IsMonster() && !IsSelf() && !IsNpc())
                 return true;
 
             return false;
@@ -61,7 +70,10 @@ namespace MediviaBot.game.model
             Console.WriteLine("| Y: " + YPos);
             Console.WriteLine("| Z: " + ZPos);
             Console.WriteLine("| HpPc: " + HpPc);
-
+            Console.WriteLine("| Npc: " + IsNpc());
+            Console.WriteLine("| Player: " + IsPlayer());
+            Console.WriteLine("| Monster: " + IsMonster());
+            Console.WriteLine("| Selft: " + IsSelf());
         }
     }
 }

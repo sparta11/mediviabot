@@ -92,6 +92,7 @@ namespace MediviaBot.memory.creature
             int xPos = ReadInt32(creatureAdr + addresses.GetXPositionAddress());
             int yPos = ReadInt32(creatureAdr + addresses.GetYPositionAddress());
             int zPos = ReadInt16(creatureAdr + addresses.GetZPositionAddress());
+            int speed = ReadInt32(creatureAdr + addresses.GetBaseSpeedAddress());
             if (xPos > 60000 || yPos > 60000 || zPos > 20)
                 return null;
 
@@ -102,7 +103,9 @@ namespace MediviaBot.memory.creature
             if (string.IsNullOrEmpty(name))
                 return null;
 
-            return new Creature(id, name, xPos, yPos, zPos, hpPc);
+            Creature creature = new Creature(id, name, xPos, yPos, zPos, hpPc);
+            creature.Speed = speed;
+            return creature;
         }
     }
 }

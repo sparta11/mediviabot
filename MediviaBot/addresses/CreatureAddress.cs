@@ -19,6 +19,7 @@ namespace MediviaBot.addresses
 
         uint GetIdAddress();
         uint GetNameAddress();
+        uint GetBaseSpeedAddress();
         
         uint GetHpPercentageAddress();
         uint GetCreatureOffset();

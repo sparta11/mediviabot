@@ -23,6 +23,10 @@ namespace MediviaBot.addresses
         uint name = 0x20;
         uint hpPercentage = 0x38;
 
+        //uint direction = 
+       
+        uint baseSpeed = 0xA8;
+
         //singleton instance
         private static CreatureAddressRepository instance;
 
@@ -90,5 +94,9 @@ namespace MediviaBot.addresses
             return this.creatureOffset;
         }
 
+        public uint GetBaseSpeedAddress()
+        {
+            return this.baseSpeed;
+        }
     }
 }
